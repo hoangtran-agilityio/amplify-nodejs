@@ -90,8 +90,6 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Hoang Tran - hoang.trankim@asnet.com.vn
-
 Project Link: [https://github.com/hoangtran-agilityio/amplify-nodejs](https://github.com/hoangtran-agilityio/amplify-nodejs)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
