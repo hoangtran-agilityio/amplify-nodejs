@@ -99,8 +99,4 @@ Project Link: [https://github.com/hoangtran-agilityio/amplify-nodejs](https://gi
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
-
 <p align="right">(<a href="#top">back to top</a>)</p>
