@@ -66,7 +66,7 @@ This is steps of how you setting up project and deploy to AWS.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-For more examples, please refer to the [API Documentation](https://docs.google.com/document/d/1hTzgOOYwBvUjaMo6P1EcAADf4bxGyXE0Tlf-oTNaKSA/edit?usp=sharing)_
+For more examples, please refer to the [API Documentation](https://docs.google.com/document/d/1hTzgOOYwBvUjaMo6P1EcAADf4bxGyXE0Tlf-oTNaKSA/edit?usp=sharing)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
