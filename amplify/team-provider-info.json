@@ -19,7 +19,7 @@
       "function": {
         "bookHandler": {
           "deploymentBucketName": "amplify-sampleproject-dev-161835-deployment",
-          "s3Key": "amplify-builds/bookHandler-377436322f5638526b66-build.zip"
+          "s3Key": "amplify-builds/bookHandler-572f4c714471686c4234-build.zip"
         }
       }
     }

@@ -26,7 +26,7 @@ exports.booksRouter.post("/books", async (req, res) => {
     try {
         const book = req.body;
         const newItem = await (0, book_service_1.addBook)(book);
-        res.status(200).send(newItem);
+        res.status(201).send(newItem);
     }
     catch (e) {
         res.status(500).send(e.message);
@@ -36,7 +36,17 @@ exports.booksRouter.put("/books/:id", async (req, res) => {
     try {
         const book = req.body;
         await (0, book_service_1.updateBook)(req.params.id, book);
-        res.status(200).send({ "message": "Update success!" });
+        res.status(201).send({ "message": "Update success!" });
+    }
+    catch (e) {
+        res.status(500).send(e.message);
+    }
+});
+exports.booksRouter.delete("/books/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        await (0, book_service_1.deleteBook)(id);
+        res.sendStatus(204).send({ "message": "Delete success!" });
     }
     catch (e) {
         res.status(500).send(e.message);

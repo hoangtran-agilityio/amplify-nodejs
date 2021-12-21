@@ -12,7 +12,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a sample I have build with AWS Amplify, Typescript and Express. Project have one model Book and one AWS Lambda for handle request from API Gateway.
+Here's a sample I have build with AWS Amplify, Typescript and Express. Project have one model Book and I use AWS Serverless Express to run serverless applications and REST APIs using existing Node.js application framework, on top of AWS Lambda and Amazon API Gateway.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

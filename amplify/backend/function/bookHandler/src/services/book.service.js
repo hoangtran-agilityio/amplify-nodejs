@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateBook = exports.addBook = exports.getBook = exports.listBooks = void 0;
+exports.deleteBook = exports.updateBook = exports.addBook = exports.getBook = exports.listBooks = void 0;
 const aws_sdk_1 = require("aws-sdk");
 const { ENV, REGION, STORAGE_BOOKS_ARN, STORAGE_BOOKS_NAME, STORAGE_BOOKS_STREAMARN } = process.env;
 const dynamoDb = new aws_sdk_1.DynamoDB.DocumentClient({ region: REGION });
@@ -64,6 +64,17 @@ const updateBook = async (id, book) => {
     await dynamoDb.update(params).promise();
 };
 exports.updateBook = updateBook;
+const deleteBook = async (id) => {
+    const params = {
+        TableName: STORAGE_BOOKS_NAME,
+        Key: {
+            id: id
+        }
+    };
+    console.log('params', JSON.stringify(params));
+    await dynamoDb.delete(params).promise();
+};
+exports.deleteBook = deleteBook;
 const buildUpdateExpression = (data) => {
     let updateExpression = 'set';
     const keys = Object.keys(data);

@@ -4,7 +4,8 @@ import {
   listBooks,
 	getBook,
 	addBook,
-	updateBook
+	updateBook,
+  deleteBook
 } from "../services/book.service";
 
 import { 
@@ -13,6 +14,9 @@ import {
 
 export const booksRouter = express.Router();
 
+/**
+ * Get books return list books
+ */
 booksRouter.get("/books", async (req: Request, res: Response) => {
   try {
     const items: Book[] = await listBooks();
@@ -23,6 +27,9 @@ booksRouter.get("/books", async (req: Request, res: Response) => {
   }
 });
 
+/**
+ * Get a book with id return book
+ */
 booksRouter.get("/books/:id", async (req: Request, res: Response) => {
   try {
     const item: Book = await getBook(req.params.id);
@@ -33,25 +40,45 @@ booksRouter.get("/books/:id", async (req: Request, res: Response) => {
   }
 });
 
+/**
+ * Create a book return book with status code 201
+ */
 booksRouter.post("/books", async (req: Request, res: Response) => {
   try {
 		const book: Book = req.body;
 
     const newItem: Book = await addBook(book);
 
-    res.status(200).send(newItem);
+    res.status(201).send(newItem);
   } catch (e) {
     res.status(500).send(e.message);
   }
 });
 
+/**
+ * Update a book with id and return success with status code 201
+ */
 booksRouter.put("/books/:id", async (req: Request, res: Response) => {
   try {
 		const book: Book = req.body;
 
     await updateBook(req.params.id, book);
 
-    res.status(200).send({"message": "Update success!"});
+    res.status(201).send({"message": "Update success!"});
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
+});
+
+/**
+ * Delete a book with id and return success with status code 204
+ */
+booksRouter.delete("/books/:id", async (req: Request, res: Response) => {
+  try {
+    const id: string = req.params.id;
+    await deleteBook(id);
+
+    res.sendStatus(204).send({"message": "Delete success!"});
   } catch (e) {
     res.status(500).send(e.message);
   }
